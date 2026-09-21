@@ -1,1 +1,2 @@
-# Business-Forecasting-Homework-1
+# Business-Forecasting
+# This repository contains file for Business Forecasting
