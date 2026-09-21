@@ -1,0 +1,177 @@
+---
+title: "Business Forecasting Homework 1"
+output: html_document
+date: "2026-09-20"
+---
+
+```{r}
+Typical_Employee_Survey_Data <- read.csv("Typical_Employee_Survey_Data.csv", fileEncoding = "UTF-8-BOM")
+#1. Print out the 5-point summary and boxplot (numerical columns) for each column
+min(Typical_Employee_Survey_Data$Age)
+max(Typical_Employee_Survey_Data$Age)
+range(Typical_Employee_Survey_Data$Age)
+StatRange = max(Typical_Employee_Survey_Data$Age) - min(Typical_Employee_Survey_Data$Age)
+StatRange
+mean(Typical_Employee_Survey_Data$Age)
+summary(Typical_Employee_Survey_Data$Age)
+boxplot(Typical_Employee_Survey_Data$Age)
+
+min(Typical_Employee_Survey_Data$Gender)
+max(Typical_Employee_Survey_Data$Gender)
+range(Typical_Employee_Survey_Data$Gender)
+StatRange = max(Typical_Employee_Survey_Data$Gender) - min(Typical_Employee_Survey_Data$Gender)
+StatRange
+mean(Typical_Employee_Survey_Data$Gender)
+summary(Typical_Employee_Survey_Data$Gender)
+boxplot(Typical_Employee_Survey_Data$Gender)
+
+
+min(Typical_Employee_Survey_Data$Satisfaction)
+max(Typical_Employee_Survey_Data$Satisfaction)
+range(Typical_Employee_Survey_Data$Satisfaction)
+StatRange = max(Typical_Employee_Survey_Data$Satisfaction) - min(Typical_Employee_Survey_Data$Satisfaction)
+StatRange
+mean(Typical_Employee_Survey_Data$Satisfaction)
+summary(Typical_Employee_Survey_Data$Satisfaction)
+boxplot(Typical_Employee_Survey_Data$Satisfaction)
+
+
+min(Typical_Employee_Survey_Data$Job.Characteristics)
+max(Typical_Employee_Survey_Data$Job.Characteristics)
+range(Typical_Employee_Survey_Data$Job.Characteristics)
+StatRange = max(Typical_Employee_Survey_Data$Job.Characteristics) - min(Typical_Employee_Survey_Data$Job.Characteristics)
+StatRange
+mean(Typical_Employee_Survey_Data$Job.Characteristics)
+summary(Typical_Employee_Survey_Data$Job.Characteristics)
+boxplot(Typical_Employee_Survey_Data$Job.Characteristics)
+
+
+min(Typical_Employee_Survey_Data$Years.Worked)
+max(Typical_Employee_Survey_Data$Years.Worked)
+range(Typical_Employee_Survey_Data$Years.Worked)
+StatRange = max(Typical_Employee_Survey_Data$Years.Worked) - min(Typical_Employee_Survey_Data$Years.Worked)
+StatRange
+mean(Typical_Employee_Survey_Data$Years.Worked)
+summary(Typical_Employee_Survey_Data$Years.Worked)
+boxplot(Typical_Employee_Survey_Data$Years.Worked)
+
+
+min(Typical_Employee_Survey_Data$Likely.to.be.Promoted)
+max(Typical_Employee_Survey_Data$Likely.to.be.Promoted)
+range(Typical_Employee_Survey_Data$Likely.to.be.Promoted)
+StatRange = max(Typical_Employee_Survey_Data$Likely.to.be.Promoted) - min(Typical_Employee_Survey_Data$Likely.to.be.Promoted)
+StatRange
+mean(Typical_Employee_Survey_Data$Likely.to.be.Promoted)
+summary(Typical_Employee_Survey_Data$Likely.to.be.Promoted)
+boxplot(Typical_Employee_Survey_Data$Likely.to.be.Promoted)
+
+
+min(Typical_Employee_Survey_Data$Work.Decisions)
+max(Typical_Employee_Survey_Data$Work.Decisions)
+range(Typical_Employee_Survey_Data$Work.Decisions)
+StatRange = max(Typical_Employee_Survey_Data$Work.Decisions) - min(Typical_Employee_Survey_Data$Work.Decisions)
+StatRange
+mean(Typical_Employee_Survey_Data$Work.Decisions)
+summary(Typical_Employee_Survey_Data$Work.Decisions)
+boxplot(Typical_Employee_Survey_Data$Work.Decisions)
+
+
+min(Typical_Employee_Survey_Data$Budget.Decisions)
+max(Typical_Employee_Survey_Data$Budget.Decisions)
+range(Typical_Employee_Survey_Data$Budget.Decisions)
+StatRange = max(Typical_Employee_Survey_Data$Budget.Decisions) - min(Typical_Employee_Survey_Data$Budget.Decisions)
+StatRange
+mean(Typical_Employee_Survey_Data$Budget.Decisions)
+summary(Typical_Employee_Survey_Data$Budget.Decisions)
+boxplot(Typical_Employee_Survey_Data$Budget.Decisions)
+
+
+min(Typical_Employee_Survey_Data$Proud)
+max(Typical_Employee_Survey_Data$Proud)
+range(Typical_Employee_Survey_Data$Proud)
+StatRange = max(Typical_Employee_Survey_Data$Proud) - min(Typical_Employee_Survey_Data$Proud)
+StatRange
+mean(Typical_Employee_Survey_Data$Proud)
+summary(Typical_Employee_Survey_Data$Proud)
+boxplot(Typical_Employee_Survey_Data$Proud)
+
+
+min(Typical_Employee_Survey_Data$Turn.down.Another.Job)
+max(Typical_Employee_Survey_Data$Turn.down.Another.Job)
+range(Typical_Employee_Survey_Data$Turn.down.Another.Job)
+StatRange = max(Typical_Employee_Survey_Data$Turn.down.Another.Job) - min(Typical_Employee_Survey_Data$Turn.down.Another.Job)
+StatRange
+mean(Typical_Employee_Survey_Data$Turn.down.Another.Job)
+summary(Typical_Employee_Survey_Data$Turn.down.Another.Job)
+boxplot(Typical_Employee_Survey_Data$Turn.down.Another.Job)
+
+
+min(Typical_Employee_Survey_Data$Relations)
+max(Typical_Employee_Survey_Data$Relations)
+range(Typical_Employee_Survey_Data$Relations)
+StatRange = max(Typical_Employee_Survey_Data$Relations) - min(Typical_Employee_Survey_Data$Relations)
+StatRange
+mean(Typical_Employee_Survey_Data$Relations)
+summary(Typical_Employee_Survey_Data$Relations)
+boxplot(Typical_Employee_Survey_Data$Relations)
+
+summary(Typical_Employee_Survey_Data)
+
+
+#2. Convert the columns that need to be converted to Factors
+Typical_Employee_Survey_Data$Gender <- factor(Typical_Employee_Survey_Data$Gender, levels = c(1, 2), labels = c("Male", "Female"))
+
+Typical_Employee_Survey_Data$Satisfaction <- factor(Typical_Employee_Survey_Data$Satisfaction, levels = 1:4, labels = c("Very Satisfied", "Moderately Satisfied","A Little Dissatisfied", "Very Dissatisfied"))
+
+Typical_Employee_Survey_Data$Job.Characteristics<- factor(Typical_Employee_Survey_Data$Job.Characteristics, levels = 1:5, labels = c("High Income", "No Danger of Being Fired", "Flexible Hours", "Opportunities for Advancement", "Enjoyinh the Work"))
+
+Typical_Employee_Survey_Data$Likely.to.be.Promoted <- factor(Typical_Employee_Survey_Data$Likely.to.be.Promoted, levels = 1:5, labels = c("Very Likely", "likely", "Not Sure", "Unlikely", "Very Unlikely"))
+
+Typical_Employee_Survey_Data$Work.Decisions <- factor(Typical_Employee_Survey_Data$Work.Decisions, levels = 1:4, labels = c("Always", "Much of the time", "Sometimes", "Never"))
+ 
+Typical_Employee_Survey_Data$Budget.Decisions  <- factor(Typical_Employee_Survey_Data$Budget.Decisions, levels = c(1, 2), labels = c("Yes", "No"))
+
+Typical_Employee_Survey_Data$Proud <- factor(Typical_Employee_Survey_Data$Proud, levels = 1:4, labels = c("Very Proud", "Somewhat Proud", "Indifferent", "Not Proud At All"))
+
+Typical_Employee_Survey_Data$Turn.down.Another.Job <- factor(Typical_Employee_Survey_Data$Turn.down.Another.Job, levels = 1:5, labels = c("Very Likely", "Likely", "Not Sure", "Unlikely", "Very Unlikely"))
+
+Typical_Employee_Survey_Data$Relations <- factor(Typical_Employee_Survey_Data$Relations, levels = 1:5, labels = c("Very Good", "Good", "So So", "Bad", "Very Bad"))
+
+
+#3. Plot the right visual for each column
+hist(Typical_Employee_Survey_Data$Age)
+barplot(table(Typical_Employee_Survey_Data$Gender), main = "Gender", col = "red")
+barplot(table(Typical_Employee_Survey_Data$Satisfaction), main = "Job Satisfaction", col = "blue")
+barplot(table(Typical_Employee_Survey_Data$Job.Characteristics), main = "Job Characteristics", col = "green")
+hist(Typical_Employee_Survey_Data$Years.Worked)
+barplot(table(Typical_Employee_Survey_Data$Likely.to.be.Promoted), main = "Likely to be Promoted", col = "yellow")
+barplot(table(Typical_Employee_Survey_Data$Work.Decisions), main = "Work Decisions", col = "orange")
+barplot(table(Typical_Employee_Survey_Data$Budget.Decisions), main = "Work Decisions", col = "purple")
+barplot(table(Typical_Employee_Survey_Data$Proud), main = "Proud Working for Org", col = "brown")
+barplot(table(Typical_Employee_Survey_Data$Turn.down.Another.Job), main = "Turn Down Another Job", col = "lightblue")
+barplot(table(Typical_Employee_Survey_Data$Relations), main = "Relations", col = "lightgreen")
+
+
+#4. Plot scatter plots to show a few relationships
+
+by(Typical_Employee_Survey_Data$Age, Typical_Employee_Survey_Data$Gender, mean)
+by(Typical_Employee_Survey_Data$Age, Typical_Employee_Survey_Data$Gender, sd)
+by(Typical_Employee_Survey_Data$Age, Typical_Employee_Survey_Data$Gender, summary)
+
+aggregate(Typical_Employee_Survey_Data$Age, list("Gender" = Typical_Employee_Survey_Data$Gender), median)
+aggregate(Typical_Employee_Survey_Data$Age, list("Gender" = Typical_Employee_Survey_Data$Gender), summary)
+aggregate(Typical_Employee_Survey_Data$Years.Worked, list("Satisfaction" = Typical_Employee_Survey_Data$Satisfaction), mean)
+
+plot(Typical_Employee_Survey_Data$Age, Typical_Employee_Survey_Data$Years.Worked, main = "Age vs. Years Worked", xlab = "Age (years)", ylab = "Years Worked", col = "darkblue")
+
+plot(Typical_Employee_Survey_Data$Age, main = "Age vs. Job Satisfaction", xlab = "Age (years)", ylab = "Satisfaction (1 = Very Dissatisfied, 4 = Very Satisfied)", pch = 19, col = "darkgreen")
+
+plot(Typical_Employee_Survey_Data$Age, Typical_Employee_Survey_Data$Years.Worked, main = "Age vs. Years Worked", xlab = "Age (years)", ylab = "Years Worked", pch = 19, col = "darkorange")
+
+plot(Typical_Employee_Survey_Data$Years.Worked, main = "Years Worked vs. Likely to be Promoted", xlab = "Years Worked", ylab = "Likely to be Promoted (1 = Very Unlikely, 5 = Very Likely)", pch = 19, col = "darkred")
+
+#5. Submit the homework (RMD and HTML file) to this discussion
+
+
+```
+
